@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KG Quest 🗺️ - رحلة تعليمية لرياض الأطفال</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;600;700;800&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<div class="appbar">
+  <div class="appbar-inner">
+    <button class="back-btn" id="backBtn">⬅ رجوع</button>
+    <div class="brand" style="margin-inline-start:auto;">
+      <div class="brand-text" style="text-align:left;">
+        <h1 style="text-align:right;">KG Quest 🗺️</h1>
+        <p style="text-align:right;">Learn, Play, Explore — رياض الأطفال التطوري</p>
+      </div>
+      <div class="brand-emoji">🎓</div>
+    </div>
+    <div class="stars">⭐ <span id="starsCount">0</span></div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- HOME: unit picker -->
+  <section class="screen active" id="screen-home">
+    <div class="hub-hero">
+      <h2>اختر الوحدة وابدأ اللعب!</h2>
+      <p>ألعاب تفاعلية مبنية بدقة على أنشطة وكلمات كرّاسات رياض الأطفال التطوري</p>
+    </div>
+
+    <div class="term-section">
+      <div class="term-head-wrap">
+        <span class="term-head">📘 الفصل الدراسي الأول
+          <span class="term-sub">الوحدات 1 - 4</span>
+        </span>
+      </div>
+      <div class="grid units">
+        <button class="card unit-card u1" onclick="openUnit(1)">
+          <div class="badge">🏫</div><h3>أهلاً بالروضة</h3><p>الوحدة الأولى</p>
+        </button>
+        <button class="card unit-card u2" onclick="openUnit(2)">
+          <div class="badge">🙋</div><h3>من أنا؟</h3><p>الوحدة الثانية</p>
+        </button>
+        <button class="card unit-card u3" onclick="openUnit(3)">
+          <div class="badge">👨‍👩‍👧‍👦</div><h3>أسرتي</h3><p>الوحدة الثالثة</p>
+        </button>
+        <button class="card unit-card u4" onclick="openUnit(4)">
+          <div class="badge">🐾</div><h3>الحيوانات</h3><p>الوحدة الرابعة</p>
+        </button>
+      </div>
+    </div>
+
+    <div class="term-section">
+      <div class="term-head-wrap">
+        <span class="term-head">📗 الفصل الدراسي الثاني
+          <span class="term-sub">الوحدات 5 - 8</span>
+        </span>
+      </div>
+      <div class="grid units">
+        <button class="card unit-card u5" onclick="openUnit(5)">
+          <div class="badge">🌱</div><h3>النباتات</h3><p>الوحدة الخامسة</p>
+        </button>
+        <button class="card unit-card u6" onclick="openUnit(6)">
+          <div class="badge">🏛️</div><h3>وطني الأردن</h3><p>الوحدة السادسة</p>
+        </button>
+        <button class="card unit-card u7" onclick="openUnit(7)">
+          <div class="badge">🌍</div><h3>أصدقاء الأرض</h3><p>الوحدة السابعة</p>
+        </button>
+        <button class="card unit-card u8" onclick="openUnit(8)">
+          <div class="badge">🎓</div><h3>شكرًا روضتي</h3><p>الوحدة الثامنة</p>
+        </button>
+      </div>
+    </div>
+
+    <div class="term-section">
+      <div class="term-head-wrap">
+        <span class="term-head">🌟 محتوى إضافي
+          <span class="term-sub">تدريب إثرائي غير مرتبط بفصل محدّد</span>
+        </span>
+      </div>
+      <div class="grid units">
+        <button class="card unit-card umath" onclick="openUnit('math')">
+          <div class="badge">🔢</div><h3>عالم الرياضيات</h3><p>تدريب إضافي</p>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- UNIT 1 HUB -->
+  <section class="screen" id="screen-unit1">
+    <div class="hub-hero"><h2>🏫 أهلاً بالروضة</h2><p>حرف الألف، حرف الواو، أدوات الروضة، والعدد واحد</p><span class="term-sub" style="display:block;margin-top:4px;">📘 الفصل الدراسي الأول</span></div>
+    <div class="grid">
+      <button class="card u1" onclick="startAlefQuiz()"><span class="stars-earned" id="stars-u1-alef"></span><div class="badge">🔤</div><h3>حرف الألف (ا)</h3><p>اكتشف الكلمات التي تحتوي على حرف (ا): تفاح، دائرة، قطار، غزال</p></button>
+      <button class="card u1" onclick="startWawQuiz()"><span class="stars-earned" id="stars-u1-waw"></span><div class="badge">🔤</div><h3>حرف الواو (و)</h3><p>اكتشف الكلمات التي تحتوي على حرف (و): ورق، خروف، جرو، فول</p></button>
+      <button class="card u1" onclick="startU1English()"><span class="stars-earned" id="stars-u1-english"></span><div class="badge">🔤</div><h3>English Letters: A, C</h3><p>cat, cake, car, ant, ax, apple</p></button>
+      <button class="card u1" onclick="startSchoolTools()"><span class="stars-earned" id="stars-u1-tools"></span><div class="badge">🎒</div><h3>أدوات الروضة</h3><p>صِل كل أداة بما يرتبط بها</p></button>
+      <button class="card u1" onclick="startOddOne()"><span class="stars-earned" id="stars-u1-odd"></span><div class="badge">🔍</div><h3>الشيء المختلف</h3><p>ابحث عن العنصر المختلف بين مجموعة متشابهة</p></button>
+      <button class="card u1" onclick="startNumberOne()"><span class="stars-earned" id="stars-u1-numberone"></span><div class="badge">1️⃣</div><h3>العدد واحد</h3><p>ميّز المجموعة التي تحتوي على عنصر واحد فقط</p></button>
+      <button class="card u1" onclick="startU1Numbers()"><span class="stars-earned" id="stars-u1-numbers"></span><div class="badge">🔢</div><h3>أعدّ معي</h3><p>عدّ أدوات الروضة من 1 إلى 3</p></button>
+      <button class="card u1" onclick="startU1Pattern()"><span class="stars-earned" id="stars-u1-pattern"></span><div class="badge">🧩</div><h3>أكمل النمط</h3><p>لاحظ التكرار وأكمل الشكل الناقص</p></button>
+    </div>
+  </section>
+
+  <!-- UNIT 2 HUB -->
+  <section class="screen" id="screen-unit2">
+    <div class="hub-hero"><h2>🙋 من أنا؟</h2><p>حواسي، حروفي، جسمي، الأشكال، وغذائي الصحي</p><span class="term-sub" style="display:block;margin-top:4px;">📘 الفصل الدراسي الأول</span></div>
+    <div class="grid">
+      <button class="card u2" onclick="startSenses()"><span class="stars-earned" id="stars-u2-senses"></span><div class="badge">🖐️</div><h3>حواسي الخمس</h3><p>صِل كل عضو بما يفعله</p></button>
+      <button class="card u2" onclick="startU2Letters()"><span class="stars-earned" id="stars-u2-letters"></span><div class="badge">🔤</div><h3>حروف ي ب م ف</h3><p>اكتشف الحروف في كلمات: دمية، برتقالة، ليمون، فيل</p></button>
+      <button class="card u2" onclick="startU2English()"><span class="stars-earned" id="stars-u2-english"></span><div class="badge">🔤</div><h3>English Letters: T,D,M,H</h3><p>table, tiger, duck, dog, milk, monkey, hat, hen, house</p></button>
+      <button class="card u2" onclick="startDressChild()"><span class="stars-earned" id="stars-u2-dress"></span><div class="badge">🧢</div><h3>أجزاء جسمي</h3><p>صِل كل قطعة ملابس بمكانها على الجسم</p></button>
+      <button class="card u2" onclick="startU2Numbers()"><span class="stars-earned" id="stars-u2-numbers"></span><div class="badge">🔢</div><h3>أعدّ معي</h3><p>عدّ العناصر واختر الرقم الصحيح (2-5)</p></button>
+      <button class="card u2" onclick="startShapes()"><span class="stars-earned" id="stars-u2-shapes"></span><div class="badge">🔺</div><h3>الأشكال الهندسية</h3><p>ميّز المثلث والدائرة والمربع</p></button>
+      <button class="card u2" onclick="startFood()"><span class="stars-earned" id="stars-u2-food"></span><div class="badge">🍎</div><h3>غذائي الصحي</h3><p>صنّف الطعام: صحي أم غير صحي؟</p></button>
+      <button class="card u2" onclick="startDoctorTools()"><span class="stars-earned" id="stars-u2-doctor"></span><div class="badge">🩺</div><h3>أدوات الطبيب</h3><p>ساعد الطبيب واكتشف أدواته الطبية</p></button>
+      <button class="card u2" onclick="startCleaningTools()"><span class="stars-earned" id="stars-u2-cleaning"></span><div class="badge">🧼</div><h3>أدوات النظافة</h3><p>صِل كل أداة نظافة بما يناسبها</p></button>
+      <button class="card u2" onclick="openGameScreen('hazard');initHazard();"><span class="stars-earned" id="stars-u2-hazard"></span><div class="badge">⚠️</div><h3>احذر الخطر</h3><p>اكتشف الأدوات الخطرة في المنزل</p></button>
+      <button class="card u2" onclick="startU2Pattern()"><span class="stars-earned" id="stars-u2-pattern"></span><div class="badge">🧩</div><h3>أكمل النمط</h3><p>لاحظ التكرار وأكمل الشكل الناقص</p></button>
+    </div>
+  </section>
+
+  <!-- UNIT 3 HUB -->
+  <section class="screen" id="screen-unit3">
+    <div class="hub-hero"><h2>👨‍👩‍👧‍👦 أسرتي</h2><p>حروف أسرتي، الأعمار، المهن، بيتي، والأعداد</p><span class="term-sub" style="display:block;margin-top:4px;">📘 الفصل الدراسي الأول</span></div>
+    <div class="grid">
+      <button class="card u3" onclick="startU3Letters()"><span class="stars-earned" id="stars-u3-letters"></span><div class="badge">🔤</div><h3>حروف س ر ت ش</h3><p>اكتشف الحروف في كلمات: سلحفاة، رمانة، تاج، شجرة</p></button>
+      <button class="card u3" onclick="startU3English()"><span class="stars-earned" id="stars-u3-english"></span><div class="badge">🔤</div><h3>English Letters: S,N,O,P</h3><p>sun, snake, star, nest, nose, net, ox, octopus, orange, pen, panda, parrot</p></button>
+      <button class="card u3" onclick="startAgeQuiz()"><span class="stars-earned" id="stars-u3-age"></span><div class="badge">👶</div><h3>الأصغر والأكبر</h3><p>من الأصغر سناً؟ ومن الأكبر؟</p></button>
+      <button class="card u3" onclick="startProfessions()"><span class="stars-earned" id="stars-u3-professions"></span><div class="badge">🧰</div><h3>أصحاب المهن</h3><p>صِل كل مهنة بالأداة الخاصة بها</p></button>
+      <button class="card u3" onclick="startPlaces()"><span class="stars-earned" id="stars-u3-places"></span><div class="badge">🏠</div><h3>غرف بيتي</h3><p>صِل كل قطعة أثاث بمكانها الصحيح في البيت</p></button>
+      <button class="card u3" onclick="startTrueColors()"><span class="stars-earned" id="stars-u3-colors"></span><div class="badge">🎨</div><h3>الألوان الحقيقية</h3><p>اختر اللون الحقيقي لكل عنصر</p></button>
+      <button class="card u3" onclick="startU3Numbers()"><span class="stars-earned" id="stars-u3-numbers"></span><div class="badge">🔢</div><h3>أعدّ معي</h3><p>عدّ من 6 إلى 9</p></button>
+      <button class="card u3" onclick="startOrderNumbers()"><span class="stars-earned" id="stars-u3-orderNumbers"></span><div class="badge">📶</div><h3>رتّب الأعداد</h3><p>رتّب الأعداد من الأصغر إلى الأكبر</p></button>
+      <button class="card u3" onclick="startU3Pattern()"><span class="stars-earned" id="stars-u3-pattern"></span><div class="badge">🧩</div><h3>أكمل النمط</h3><p>لاحظ التكرار وأكمل الشكل الناقص</p></button>
+    </div>
+  </section>
+
+  <!-- UNIT 4 HUB -->
+  <section class="screen" id="screen-unit4">
+    <div class="hub-hero"><h2>🐾 الحيوانات</h2><p>حروف حيواناتي، الأمهات وصغارها، الموطن، ودورة الحياة</p><span class="term-sub" style="display:block;margin-top:4px;">📘 الفصل الدراسي الأول</span></div>
+    <div class="grid">
+      <button class="card u4" onclick="startU4Letters()"><span class="stars-earned" id="stars-u4-letters"></span><div class="badge">🔤</div><h3>حروف ن د ح ع</h3><p>اكتشف الحروف في كلمات: عنب، دجاجة، حوت، دعسوقة</p></button>
+      <button class="card u4" onclick="startU4English()"><span class="stars-earned" id="stars-u4-english"></span><div class="badge">🔤</div><h3>English Letters: E,B,F,I</h3><p>egg, elephant, bird, book, banana, fish, flower, insect, ink</p></button>
+      <button class="card u4" onclick="startBabies()"><span class="stars-earned" id="stars-u4-babies"></span><div class="badge">🐣</div><h3>أمهات وصغار</h3><p>صِل كل حيوان بصغيره</p></button>
+      <button class="card u4" onclick="startHabitat()"><span class="stars-earned" id="stars-u4-habitat"></span><div class="badge">🌊</div><h3>بحري أم بري؟</h3><p>صنّف الحيوانات حسب موطنها</p></button>
+      <button class="card u4" onclick="startInsects()"><span class="stars-earned" id="stars-u4-insects"></span><div class="badge">🐝</div><h3>نافعة أم ضارة</h3><p>صنّف الحشرات النافعة والضارة</p></button>
+      <button class="card u4" onclick="startLifecycle()"><span class="stars-earned" id="stars-u4-lifecycle"></span><div class="badge">🔄</div><h3>رتّب الترتيب</h3><p>رتّب دورة حياة الدجاجة وأحداث يومي</p></button>
+      <button class="card u4" onclick="startU4Numbers()"><span class="stars-earned" id="stars-u4-numbers"></span><div class="badge">🔢</div><h3>أعدّ معي</h3><p>عدّ الحيوانات من 1 إلى 3</p></button>
+      <button class="card u4" onclick="startU4Pattern()"><span class="stars-earned" id="stars-u4-pattern"></span><div class="badge">🧩</div><h3>أكمل النمط</h3><p>لاحظ التكرار وأكمل الشكل الناقص</p></button>
+    </div>
+  </section>
+
+  <!-- UNIT 5 HUB -->
+  <section class="screen" id="screen-unit5">
+    <div class="hub-hero"><h2>🌱 النباتات</h2><p>حروف ل ز ج، English G K، أعداد 10-12، وعالم النبات</p><span class="term-sub" style="display:block;margin-top:4px;">📗 الفصل الدراسي الثاني</span></div>
+    <div class="grid" id="grid-unit5"></div>
+  </section>
+
+  <!-- UNIT 6 HUB -->
+  <section class="screen" id="screen-unit6">
+    <div class="hub-hero"><h2>🏛️ وطني الأردن</h2><p>حروف ق خ غ، English L U، أعداد 13-15، ومعالم وطني</p><span class="term-sub" style="display:block;margin-top:4px;">📗 الفصل الدراسي الثاني</span></div>
+    <div class="grid" id="grid-unit6"></div>
+  </section>
+
+  <!-- UNIT 7 HUB -->
+  <section class="screen" id="screen-unit7">
+    <div class="hub-hero"><h2>🌍 أصدقاء الأرض</h2><p>حروف ذ ط ك ض، English Y W X Z، أعداد 17-20، وحافظ على الأرض</p><span class="term-sub" style="display:block;margin-top:4px;">📗 الفصل الدراسي الثاني</span></div>
+    <div class="grid" id="grid-unit7"></div>
+  </section>
+
+  <!-- UNIT 8 HUB -->
+  <section class="screen" id="screen-unit8">
+    <div class="hub-hero"><h2>🎓 شكرًا روضتي</h2><p>حروف ظ هـ، ومهارات وقيم</p><span class="term-sub" style="display:block;margin-top:4px;">📗 الفصل الدراسي الثاني</span></div>
+    <div class="grid" id="grid-unit8"></div>
+  </section>
+
+  <!-- MATH WORLD HUB -->
+  <section class="screen" id="screen-unitmath">
+    <div class="hub-hero"><h2>🔢 عالم الرياضيات</h2><p>الجمع والطرح، الأشكال، الأنماط، المقارنة، الترتيب، والقفز بالعشرات</p><span class="term-sub" style="display:block;margin-top:4px;">🌟 محتوى إضافي</span></div>
+    <div class="grid" id="grid-unitmath"></div>
+  </section>
+
+  <!-- GENERIC: MATCH -->
+  <section class="screen" id="screen-match">
+    <div class="game-panel">
+      <div class="game-title"><span class="emoji" id="match-icon">🖐️</span><h2 id="match-title">مطابقة</h2></div>
+      <p class="progress-line" id="match-progress"></p>
+      <p class="prompt" id="match-prompt">صِل كل عنصر بما يناسبه</p>
+      <div class="match-cols"><div id="match-left"></div><div id="match-right"></div></div>
+    </div>
+  </section>
+
+  <!-- GENERIC: QUIZ -->
+  <section class="screen" id="screen-quiz">
+    <div class="game-panel">
+      <div class="game-title"><span class="emoji" id="quiz-icon">🔤</span><h2 id="quiz-title">سؤال</h2></div>
+      <p class="progress-line" id="quiz-progress"></p>
+      <div class="letter-big" id="quiz-header" style="display:none;"></div>
+      <div class="objects-row" id="quiz-objects" style="display:none;"></div>
+      <p class="prompt" id="quiz-prompt"></p>
+      <p class="prompt-sub" id="quiz-sub" style="display:none;"></p>
+      <div class="options-row" id="quiz-options"></div>
+    </div>
+  </section>
+
+  <!-- GENERIC: COUNT -->
+  <section class="screen" id="screen-count">
+    <div class="game-panel">
+      <div class="game-title"><span class="emoji" id="count-icon">🔢</span><h2 id="count-title">أعدّ معي</h2></div>
+      <p class="progress-line" id="count-progress"></p>
+      <p class="credit-line">تنفيذ: المعلمة مارينا البقاعين</p>
+      <p class="prompt">كم عدد العناصر؟</p>
+      <div class="objects-row" id="count-objects"></div>
+      <div class="num-row" id="count-options"></div>
+    </div>
+  </section>
+
+  <!-- GENERIC: SORT -->
+  <section class="screen" id="screen-sort">
+    <div class="game-panel">
+      <div class="game-title"><span class="emoji" id="sort-icon">🍎</span><h2 id="sort-title">تصنيف</h2></div>
+      <p class="progress-line" id="sort-progress"></p>
+      <div class="stage">
+        <span class="stage-emoji" id="sort-emoji">🍎</span>
+        <span class="stage-name" id="sort-name">تفاحة</span>
+      </div>
+      <div class="choice-row">
+        <button class="choice-btn a" id="sort-btnA" onclick="answerSort(true)">صحي</button>
+        <button class="choice-btn b" id="sort-btnB" onclick="answerSort(false)">غير صحي</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- GENERIC: ORDER -->
+  <section class="screen" id="screen-order">
+    <div class="game-panel">
+      <div class="game-title"><span class="emoji" id="order-icon">🔄</span><h2 id="order-title">رتّب</h2></div>
+      <p class="progress-line" id="order-progress"></p>
+      <p class="prompt" id="order-prompt"></p>
+      <div class="order-row" id="order-row"></div>
+    </div>
+  </section>
+
+  <!-- GENERIC: PATTERN -->
+  <section class="screen" id="screen-pattern">
+    <div class="game-panel">
+      <div class="game-title"><span class="emoji">🧩</span><h2>أكمل النمط</h2></div>
+      <p class="progress-line" id="pattern-progress"></p>
+      <p class="prompt">ما الشكل التالي في النمط؟</p>
+      <div class="pattern-row" id="pattern-row"></div>
+      <div class="options-row" id="pattern-options"></div>
+    </div>
+  </section>
+
+  <!-- HAZARD (unit 2 special) -->
+  <section class="screen" id="screen-hazard">
+    <div class="game-panel">
+      <div class="game-title"><span class="emoji">⚠️</span><h2>احذر الخطر</h2></div>
+      <p class="prompt">انقر فقط على الأدوات الخطرة</p>
+      <div class="hazard-meta"><span id="hazard-found">تم العثور: 0 / 4</span><span id="hazard-lives">❤️❤️❤️</span></div>
+      <div class="hazard-grid" id="hazard-grid"></div>
+    </div>
+  </section>
+
+  <footer>صُمّمت هذه الألعاب استناداً إلى أنشطة وكلمات كرّاسات منهاج رياض الأطفال التطوري - الوحدات 1، 2، 3، 4<br>تنفيذ: المعلمة مارينا البقاعين</footer>
+</div>
+
+<div class="modal-back" id="modalBack">
+  <div class="modal">
+    <span class="big-emoji">🎉</span>
+    <h3>أحسنت!</h3>
+    <p id="modalText">أكملت اللعبة بنجاح</p>
+    <div class="modal-actions">
+      <button class="btn-again" id="modalAgainBtn">العب مرة أخرى</button>
+      <button class="btn-home" onclick="closeModal();backToUnit();">رجوع للوحدة</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
