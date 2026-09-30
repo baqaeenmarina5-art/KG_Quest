@@ -410,6 +410,18 @@ if ('serviceWorker' in navigator) {
       .then(function () {
         console.log('KG Quest is ready to install');
       })
+    <script src="app.js"></script>
+
+<script
+<script src="app.js"></script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('./sw.js')
+      .then(function () {
+        console.log('KG Quest is ready to install');
+      })
       .catch(function (error) {
         console.log('Service Worker error:', error);
       });
@@ -419,3 +431,18 @@ if ('serviceWorker' in navigator) {
 
 </body>
 </html>
+    
+    
+      
+      
+      
+  
+
+
+
+
+    
+
+
+
+
