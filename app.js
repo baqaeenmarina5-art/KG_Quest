@@ -751,10 +751,10 @@ function startU2English(){
 }
 function startDressChild(){
   const pairs=[
-    {id:'a',leftEmoji:'🧢',leftLabel:'قبعة',rightEmoji:'📍',rightLabel:'الرأس'},
-    {id:'b',leftEmoji:'👕',leftLabel:'قميص',rightEmoji:'📍',rightLabel:'الجسم'},
-    {id:'c',leftEmoji:'👖',leftLabel:'بنطال',rightEmoji:'📍',rightLabel:'الأرجل'},
-    {id:'d',leftEmoji:'👟',leftLabel:'حذاء',rightEmoji:'📍',rightLabel:'القدمين'},
+    {id:'a',leftEmoji:'🧢',leftLabel:'قبعة',rightEmoji:'🙂',rightLabel:'الرأس'},
+    {id:'b',leftEmoji:'👕',leftLabel:'قميص',rightEmoji:'🧍',rightLabel:'الجسم'},
+    {id:'c',leftEmoji:'👖',leftLabel:'بنطال',rightEmoji:'🦵',rightLabel:'الأرجل'},
+    {id:'d',leftEmoji:'👟',leftLabel:'حذاء',rightEmoji:'🦶',rightLabel:'القدمين'},
   ];
   runMatch(pairs,'u2-dress','🧢','أجزاء جسمي','صِل كل قطعة ملابس بمكانها على الجسم');
 }
@@ -1156,7 +1156,7 @@ const IMPORTED_LEVELS=[
 function toRounds(questions){
   return questions.map(q=>{
     if(q.type==='count'){
-      return { prompt:'عدّ العناصر، ثم اختر العدد الصحيح:', objectsRow:{emoji:q.emoji,count:q.count}, options:q.options.map(n=>({emoji:String(n), correct:n===q.count})) };
+      return { prompt:'اختر العدد الصحيح:', objectsRow:{emoji:q.emoji,count:q.count}, options:q.options.map(n=>({emoji:String(n), correct:n===q.count})) };
     }
     if(q.type==='tf'){
       return { prompt:q.prompt, sub:q.sub||null, options:[{emoji:'✅',label:'صحيح',correct:q.correct===true},{emoji:'❌',label:'خطأ',correct:q.correct===false}] };
